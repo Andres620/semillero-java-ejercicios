@@ -1,4 +1,4 @@
-package semillero.ejercicio3;
+package herencia.ejercicio3;
 
 public class ApartamentoFamiliar extends Apartamento{
 	private int valorAdministracion;

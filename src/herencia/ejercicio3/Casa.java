@@ -1,4 +1,4 @@
-package semillero.ejercicio3;
+package herencia.ejercicio3;
 
 public abstract class Casa extends Vivienda{
 	protected int cantidadPisos;

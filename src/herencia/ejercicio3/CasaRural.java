@@ -1,4 +1,4 @@
-package semillero.ejercicio3;
+package herencia.ejercicio3;
 
 public class CasaRural extends Casa{
 	private int distanciaCabeceraMunicipal;

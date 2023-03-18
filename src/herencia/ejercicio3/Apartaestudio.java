@@ -1,4 +1,4 @@
-package semillero.ejercicio3;
+package herencia.ejercicio3;
 
 public class Apartaestudio extends Apartamento{	
 	public Apartaestudio(int identificadorInmobiliario, int area, String direccion) {

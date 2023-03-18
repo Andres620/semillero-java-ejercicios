@@ -1,4 +1,4 @@
-package semillero.ejercicio1;
+package herencia.ejercicio1;
 
 public class Precio {
 	protected double precio;

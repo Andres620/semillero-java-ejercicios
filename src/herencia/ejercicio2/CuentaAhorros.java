@@ -1,4 +1,4 @@
-package semillero.ejercicio2;
+package herencia.ejercicio2;
 
 public class CuentaAhorros extends Cuenta{
 

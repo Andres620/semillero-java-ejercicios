@@ -1,4 +1,4 @@
-package semillero.ejercicio1;
+package herencia.ejercicio1;
 
 public class Factura extends Precio{
 	private String emisor;

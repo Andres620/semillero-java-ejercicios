@@ -1,4 +1,4 @@
-package semillero.ejercicio3;
+package herencia.ejercicio3;
 
 public class Oficina extends Local{
 	private boolean gobierno;
