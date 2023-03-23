@@ -5,58 +5,68 @@ import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		
-		CalculosNumericos calculos = new CalculosNumericos();
-		System.out.println("Cálculo raíz cuadrada");
-		System.out.println("ingresar radicando = ");
-		double radicando = scanner.nextInt();
-		double raiz = CalculosNumericos.calcularRaizCuadrada(radicando);
-		System.out.println(raiz);
+		CalculosNumericos calculos = new CalculosNumericos();		
 		
-		System.out.println("Cálculo pendiente de recta");
-		System.out.println("ingresar x1 ");
-		double x1 = scanner.nextInt();
-		System.out.println("ingresar y1 ");
-		double y1 = scanner.nextInt();
-		System.out.println("ingresar x2 ");
-		double x2 = scanner.nextInt();
-		System.out.println("ingresar y2 ");
-		double y2 = scanner.nextInt();
-		double pendiente = calculos.calcularPendienteRecta(x1, y1, x2, y2);
-		System.out.println(pendiente);
+		// cálculo de la raíz cuadrada
+        try {
+        	double raiz = CalculosNumericos.calcularRaizCuadrada(4);
+			System.out.println("La raíz cuadrada de 4 es " + raiz);
+			
+			raiz = CalculosNumericos.calcularRaizCuadrada(-4);
+			System.out.println("La raíz cuadrada de -4 es " + raiz);
+        } catch (ArithmeticException e) {
+            System.out.println("Error al calcular la raíz cuadrada: " + e.getMessage());
+        }
+        
+     		
+        // cálculo pendiente de recta
+        try {
+        	double pendiente = calculos.calcularPendienteRecta(1, 2, 3, 4);
+			System.out.println("La pendiente de la recta es " + pendiente);
+			
+            pendiente = calculos.calcularPendienteRecta(1, 2, 1, 4);
+            System.out.println("La pendiente de la recta que pasa por (1,2) y (3,4) es: " + pendiente);
+        } catch (ArithmeticException e) {
+            System.out.println("Error al calcular la pendiente de la recta: " + e.getMessage());
+        }
+        
+        
+        // cálculo punto medio
+		try {
+			double puntoMedio = calculos.calcularPuntoMedioRecta(1, 1, 3, 3);
+			System.out.println("El punto medio de la recta es " + puntoMedio);
+			puntoMedio = calculos.calcularPuntoMedioRecta(1, 1, 1, 1);
+			System.out.println("El punto medio de la recta es " + puntoMedio);
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		
-		System.out.println("Cálculo punto medio");
-		System.out.println("ingresar x1 ");
-		x1 = scanner.nextInt();
-		System.out.println("ingresar y1 ");
-		y1 = scanner.nextInt();
-		System.out.println("ingresar x2 ");
-		x2 = scanner.nextInt();
-		System.out.println("ingresar y2 ");
-		y2 = scanner.nextInt();
-		double puntoMedio = calculos.calcularPuntoMedioRecta(x1, y1, x2, y2);
-		System.out.println(puntoMedio);
+		// cálculo reices ecuación cuadratica
+        try {
+            double[] raices = calculos.calcularRaicesEcuacionCuadratica(2, 2, -312);
+            System.out.println("Las raíces de la ecuación son: " + "x1 = " + raices[0] + " y " + "x2 = " + raices[1]);
+            raices = calculos.calcularRaicesEcuacionCuadratica(5, 2, 3);
+            System.out.println("Las raíces de la ecuación son: " + "x1 = " + raices[0] + " y " + "x2 = " + raices[1]);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        
+        
+        // cálculo cambio de base
+        try {
+        	int numero = 600;
+            int base = 3;
+            String resultado = calculos.cambiarBase(numero, base);
+            System.out.println("El número " + numero + " en base " + base + " es: " + resultado);
+            base = 1;
+            resultado = calculos.cambiarBase(numero, base);
+            System.out.println("El número " + numero + " en base " + base + " es: " + resultado);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 		
-		
-		System.out.println("Cálculo raices ecuación cuadratica");
-		System.out.println("ingresar a ");
-		double a = scanner.nextInt();
-		System.out.println("ingresar b ");
-		double b = scanner.nextInt();
-		System.out.println("ingresar c ");
-		double c = scanner.nextInt();
-		double[] raicesCuadraticas = calculos.calcularRaicesEcuacionCuadratica(a, b, c);
-		System.out.println(raicesCuadraticas);
-		
-		System.out.println("Cálculo cambio de base");
-		System.out.println("ingresar número ");
-		int numero = scanner.nextInt();
-		System.out.println("ingresar base ");
-		int base = scanner.nextInt();
-		String cambioBase = calculos.cambiarBase(numero, base);
-		System.out.println(cambioBase);
 	}
 
 }
